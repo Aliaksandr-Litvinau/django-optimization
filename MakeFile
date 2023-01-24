@@ -11,3 +11,8 @@ docker-commands:
 	#docker ps -a
 	#docker images
 
+docker-migrate:
+	docker compose run --rm web-app sh -c "python manage.py migrate"
+
+docker-create-superuser:
+	docker compose run --rm web-app sh -c "python manage.py createsuperuser"
