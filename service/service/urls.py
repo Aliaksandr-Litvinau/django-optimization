@@ -20,10 +20,10 @@ from rest_framework import routers
 from services.views import SubscriptionView
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path("admin/", admin.site.urls),
 ]
 
 router = routers.DefaultRouter()
-router.register(r'api/subscriptions', SubscriptionView)
+router.register(r"api/subscriptions", SubscriptionView)
 
 urlpatterns += router.urls
