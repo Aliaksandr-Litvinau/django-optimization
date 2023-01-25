@@ -8,7 +8,7 @@ from services.serializers import SubscriptionSerializer
 
 class SubscriptionView(ReadOnlyModelViewSet):
     queryset = (
-        not Subscription.objects.all()
+        Subscription.objects.all()
         .prefetch_related(
             # "plan",
             # "service",
