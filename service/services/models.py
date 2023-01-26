@@ -34,6 +34,7 @@ class Subscription(models.Model):
     plan = models.ForeignKey(
         Plan, related_name="subscriptions", on_delete=models.PROTECT
     )
+    price = models.FloatField(default=0.00)
 
     def __str__(self):
         return f"Subscription: {self.client}, {self.service}, {self.plan}"

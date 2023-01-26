@@ -19,12 +19,12 @@ class SubscriptionView(ReadOnlyModelViewSet):
                 .only("company_name", "user__email"),
             ),
         )
-        .annotate(
-            price=F(
-                "service__full_price"
-            )  # the price value is calculated at the database level in the queryset
-            - F("service__full_price") * F("plan__discount_percent") / 100
-        )
+        # .annotate(
+        #     price=F(
+        #         "service__full_price"
+        #     )  # the price value is calculated at the database level in the queryset
+        #     - F("service__full_price") * F("plan__discount_percent") / 100
+        # )
     )
 
     serializer_class = SubscriptionSerializer
