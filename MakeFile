@@ -20,3 +20,7 @@ docker-migrations:
 
 docker-create-superuser:
 	docker compose run --rm web-app sh -c "python manage.py createsuperuser"
+
+docker-connect-django-shell-for-work-with-a-Django-project-from-the-command-line-to-run-queries-and-test-code-snippets:
+	docker compose run --rm web-app sh -c "python manage.py shell"
+
