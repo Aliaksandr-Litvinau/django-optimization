@@ -17,7 +17,6 @@ class SubscriptionView(ReadOnlyModelViewSet):
                 .select_related("user")
                 .only("company_name", "user__email")
             )))
-    # .annotate(price=F("service__full_price") - F("service__full_price") * F("plan__discount_percent") / 100
 
     serializer_class = SubscriptionSerializer
 
