@@ -9,7 +9,7 @@ from django.db.models import F
 def set_price(subscription_id):
     from services.models import Subscription
 
-    time.sleep(20)
+    time.sleep(20)  # simulation of a long task execution
     subscription = Subscription.objects.filter(id=subscription_id).annotate(annotated_price=
                                                                             F("service__full_price") -
                                                                             F("service__full_price") *
